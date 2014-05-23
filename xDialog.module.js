@@ -3,9 +3,13 @@
  * @overview: xDialog是一个JQuery弹出层插件，它拥有简单的界面和友好的接口，压缩后大小仅2K左右。
  * @require: xDialog.css
  * @author: 简(haichong0813@gmail.com)
+ * @modify: liuyue@dakele.com
  */
 
-;(function($){
+define(function(require,exports,module){
+
+    var $ = require("jquery");
+
     var isExist = true; //防止重复弹窗
     $.xDialog = function(){
 
@@ -201,4 +205,5 @@
 
         return plugin.init();
     };
-})(jQuery);
+
+})

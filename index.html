@@ -32,7 +32,8 @@
 <pre class="x1">	
 	$.xDialog({
 		title:'温馨提示',
-		content:'xDialog是一个JQuery弹出层插件，它拥有简单的界面和友好的接口。'
+		content:'xDialog是一个JQuery弹出层插件，它拥有简单的界面和友好的接口。',
+		type:'alert'
 	});
 
 </pre>
@@ -67,22 +68,13 @@
 		},
 		cancel:function(){
 			alert('cancel');
-		}
+		},
+		type:'confirm'
 	});
 
 </pre>
 					<p class="tr"><input type="button" id="x4" class="g-button green" value="运行"></p>
-					<h4>5、提示层</h4>
-<pre class="x5">	
-	$.xDialog({
-		content:'xDialog是一个JQuery弹出层插件，它拥有简单的界面和友好的接口。',
-		type:'tips',
-		time:3
-	});
-
-</pre>
-					<p class="tr"><input type="button" id='x5' class="g-button green" value="运行"></p>
-					<h4>6、扩展方法</h4>
+					<h4>5、扩展方法</h4>
 <pre class="x6">	
 	var art = $.xDialog({
 		show:false
@@ -90,7 +82,7 @@
 	art.title('温馨提示').content('小巧，灵活，简洁，高效').open();
 
 </pre>
-					<p class="tr"><input type="button" id='x6' class="g-button green" value="运行"></p>
+					<p class="tr"><input type="button" id='x5' class="g-button green" value="运行"></p>
 					<br>
 					<h3 class="h">参数列表</h3>
 					<table border=1 cellpadding=5 cellspacing=0 class="tb">
@@ -125,10 +117,10 @@
 							<td>ok</td><td>function</td><td>null</td><td>确定按钮回调函数，函数如果返回false将阻止弹出层关闭</td>
 						</tr>
 						<tr>
-							<td>cancel</td><td>function/Boolean</td><td>true</td><td>取消按钮回调函数，如果为true，调用默认关闭事件，函数如果返回false将阻止弹出层关闭</td>
+							<td>cancel</td><td>function</td><td>true</td><td>取消按钮回调函数，函数如果返回false将阻止弹出层关闭</td>
 						</tr>
 						<tr>
-							<td>type</td><td>String</td><td>null</td><td>消息类型：tips</td>
+							<td>type</td><td>String</td><td>modal</td><td>消息类型：modal－普通模态，alert－提示框（带确认按钮），comfirm－确认框（带确认和取消按钮）</td>
 						</tr>
 						<tr>
 							<td>time</td><td>Number</td><td>true</td><td>多少秒后关闭弹出层</td>
@@ -154,19 +146,20 @@
 						</tr>
 					</table>
 				</div>
-				<div id="el" style="display:none">
-					Hello World！
+				<div id="el" style="display:none;">
+					<img src="http://stylechen.com/wp-content/uploads/demo/easydialog-v2.0/test_img.jpg" alt="">
 				</div>
 			</div>
 		</div>
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" charset="utf-8"></script>
-		<script type="text/javascript" src="xDialog.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="xDialog.js" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
 			$('#x1').click(function(){
 				$.xDialog({
 					title:'温馨提示', 
-					content:'xDialog是一个JQuery弹出层插件，它拥有简单的界面和友好的接口。'
+					content:'xDialog是一个JQuery弹出层插件，它拥有简单的界面和友好的接口。',
+					type:'alert'
 				});
 			});
 			$('#x2').click(function(){
@@ -193,16 +186,11 @@
 					},
 					cancel:function(){
 						alert("cancel");
-					}
+					},
+					type:'confirm'
 				});
 			});
 			$('#x5').click(function(){
-				$.xDialog({
-					content:'xDialog是一个JQuery弹出层插件，它拥有简单的界面和友好的接口。',
-					type:'tips'
-				});
-			});
-			$('#x6').click(function(){
 				var art = $.xDialog({
 					show:false
 				});
